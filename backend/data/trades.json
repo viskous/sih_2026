@@ -1,0 +1,26 @@
+[
+  {
+    "id": "T001",
+    "name": "Tailoring and Garment Making",
+    "nsqf_level": 3,
+    "skills": ["stitching", "cutting", "sewing machine", "measurements"],
+    "employment_type": "self",
+    "category": "textile"
+  },
+  {
+    "id": "T002",
+    "name": "Electrician - Domestic Wiring",
+    "nsqf_level": 4,
+    "skills": ["wiring", "circuits", "safety", "tools"],
+    "employment_type": "wage",
+    "category": "electrical"
+  },
+  {
+    "id": "T003",
+    "name": "Stitching and Shoe Making",
+    "nsqf_level": 4,
+    "skills": ["stitching", "constructing", "cobbler"],
+    "employment_type": "wage",
+    "category": "textile"
+  }
+]
