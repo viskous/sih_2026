@@ -5,17 +5,23 @@ def load_trades(path="data/trades.json"):
         return json.load(f)
 
 def score_trade(profile, trade):
-    profile_skills = set(profile["existing_skills"] + profile["interests"])
-    trade_skills = set(trade["skills"])
+    profile_skills = [s.lower() for s in profile["existing_skills"] + profile["interests"]]
+    trade_skills = [s.lower() for s in trade["skills"]]
 
-    overlap = profile_skills & trade_skills
-    score = len(overlap)
+    matched = set()
+    for t_skill in trade_skills:
+        for p_skill in profile_skills:
+            # match if either phrase contains the other
+            if t_skill in p_skill or p_skill in t_skill:
+                matched.add(t_skill)
+                break
 
-    # boost if employment preference matches
+    score = len(matched)
+
     if profile["employment_preference"] == trade["employment_type"] or trade["employment_type"] == "both":
         score += 1
 
-    return score, overlap
+    return score, matched
 
 def recommend(profile, trades_path="data/trades.json", top_n=3):
     trades = load_trades(trades_path)

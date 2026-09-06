@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PM-AJAY Livelihood Assistant</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 600px; margin: 40px auto; padding: 0 20px; }
+    textarea { width: 100%; height: 120px; padding: 10px; font-size: 14px; }
+    button { padding: 10px 20px; font-size: 14px; margin-top: 10px; cursor: pointer; }
+    .result { margin-top: 20px; padding: 15px; background: #f4f4f4; border-radius: 8px; }
+    .trade { margin-bottom: 10px; padding: 10px; background: white; border-left: 4px solid #4CAF50; }
+  </style>
+</head>
+<body>
+  <h2>Livelihood Assistant</h2>
+  <p>Describe your background, skills, and what kind of work you're looking for:</p>
+  <textarea id="conversationInput" placeholder="e.g. I studied till 10th class, my mother does tailoring, I know how to use a sewing machine..."></textarea>
+  <br>
+  <button onclick="getRecommendations()">Get Recommendations</button>
+
+  <div id="output"></div>
+
+  <script>
+    async function getRecommendations() {
+      const text = document.getElementById("conversationInput").value;
+      const output = document.getElementById("output");
+      output.innerHTML = "<p>Loading...</p>";
+
+      try {
+        const response = await fetch("http://127.0.0.1:8000/converse", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ conversation_text: text })
+        });
+        const data = await response.json();
+
+        let html = "<div class='result'><h3>Recommended Trades:</h3>";
+        data.recommendations.forEach(r => {
+          html += `<div class='trade'><strong>${r.trade}</strong> (NSQF Level ${r.nsqf_level})<br>
+                   Matched skills: ${r.matched_skills.join(", ")}</div>`;
+        });
+        html += "</div>";
+        output.innerHTML = html;
+      } catch (err) {
+        output.innerHTML = "<p style='color:red'>Error: " + err.message + "</p>";
+      }
+    }
+  </script>
+</body>
+</html>
