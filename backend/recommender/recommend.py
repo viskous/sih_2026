@@ -2,7 +2,7 @@ import json
 from sentence_transformers import SentenceTransformer
 
 model = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
-THRESHOLD = 0.65
+THRESHOLD = 0.55
 
 def load_trades(path="data/trades.json"):
     with open(path, "r") as f:
