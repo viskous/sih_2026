@@ -8,10 +8,6 @@ def load_trades(path="data/trades.json"):
     with open(path, "r") as f:
         return json.load(f)
 
-def load_trades(path="data/trades.json"):
-    with open(path, "r") as f:
-        return json.load(f)
-
 def score_trade(profile, trade):
 
     profile_skills = (

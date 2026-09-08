@@ -3,6 +3,7 @@ from pydantic import BaseModel
 from recommender.recommend import recommend
 from dialogue.extract_profile import extract_profile
 from database.db import init_db, save_conversation
+from database.db import init_db, save_conversation, get_dashboard_data
 
 app = FastAPI()
 init_db()
@@ -29,3 +30,7 @@ def process_conversation(input: ConversationInput):
     results = recommend(profile)
     save_conversation(input.conversation_text, profile, results)
     return {"extracted_profile": profile, "recommendations": results}
+
+@app.get("/dashboard-data")
+def dashboard_data():
+    return get_dashboard_data()

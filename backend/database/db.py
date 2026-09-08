@@ -43,3 +43,49 @@ def save_conversation(conversation_text, profile, recommendations):
     ))
     conn.commit()
     conn.close()
+
+def get_dashboard_data():
+    conn = sqlite3.connect(DB_PATH)
+    cursor = conn.cursor()
+
+    # total beneficiaries profiled
+    cursor.execute("SELECT COUNT(*) FROM conversations")
+    total = cursor.fetchone()[0]
+
+    # count by top trade
+    cursor.execute("""
+        SELECT top_trade, COUNT(*) 
+        FROM conversations 
+        WHERE top_trade IS NOT NULL
+        GROUP BY top_trade
+        ORDER BY COUNT(*) DESC
+    """)
+    trade_counts = cursor.fetchall()
+
+    # count by region
+    cursor.execute("""
+        SELECT region, COUNT(*) 
+        FROM conversations 
+        WHERE region IS NOT NULL
+        GROUP BY region
+        ORDER BY COUNT(*) DESC
+    """)
+    region_counts = cursor.fetchall()
+
+    # self vs wage split
+    cursor.execute("""
+        SELECT employment_preference, COUNT(*) 
+        FROM conversations 
+        WHERE employment_preference IS NOT NULL
+        GROUP BY employment_preference
+    """)
+    employment_split = cursor.fetchall()
+
+    conn.close()
+
+    return {
+        "total_beneficiaries": total,
+        "trade_demand": [{"trade": t, "count": c} for t, c in trade_counts],
+        "region_demand": [{"region": r, "count": c} for r, c in region_counts],
+        "employment_split": [{"type": e, "count": c} for e, c in employment_split]
+    }
