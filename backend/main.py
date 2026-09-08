@@ -7,6 +7,7 @@ from database.db import init_db, save_conversation, get_dashboard_data
 from fastapi import FastAPI, UploadFile, File
 import shutil
 from voice.asr import transcribe
+from voice.pipeline import process_voice_input
 
 app = FastAPI()
 init_db()
@@ -38,19 +39,12 @@ def process_conversation(input: ConversationInput):
 def dashboard_data():
     return get_dashboard_data()
 
+
 @app.post("/voice-converse")
 def voice_converse(audio: UploadFile = File(...)):
     temp_path = f"voice/temp_{audio.filename}"
     with open(temp_path, "wb") as f:
         shutil.copyfileobj(audio.file, f)
 
-    conversation_text = transcribe(temp_path)
-    profile = extract_profile(conversation_text)
-    results = recommend(profile)
-    save_conversation(conversation_text, profile, results)
-
-    return {
-        "transcribed_text": conversation_text,
-        "extracted_profile": profile,
-        "recommendations": results
-    }
+    result = process_voice_input(temp_path)
+    return result
