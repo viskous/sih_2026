@@ -22,5 +22,101 @@
     "skills": ["stitching", "constructing", "cobbler"],
     "employment_type": "wage",
     "category": "textile"
+  },
+  {
+    "id": "T004",
+    "name": "Embroidery and Zari Work",
+    "nsqf_level": 3,
+    "skills": ["embroidery", "hand stitching", "design patterns", "thread work"],
+    "employment_type": "self",
+    "category": "textile"
+  },
+  {
+    "id": "T005",
+    "name": "Beautician and Skin Care",
+    "nsqf_level": 4,
+    "skills": ["facial", "makeup", "skin care", "hygiene practices"],
+    "employment_type": "self",
+    "category": "beauty and wellness"
+  },
+  {
+    "id": "T006",
+    "name": "Hair Styling and Salon Services",
+    "nsqf_level": 4,
+    "skills": ["haircutting", "hair styling", "customer service", "grooming"],
+    "employment_type": "both",
+    "category": "beauty and wellness"
+  },
+  {
+    "id": "T007",
+    "name": "Plumbing - General",
+    "nsqf_level": 4,
+    "skills": ["pipefitting", "leak repair", "tools", "measurements"],
+    "employment_type": "wage",
+    "category": "construction"
+  },
+  {
+    "id": "T008",
+    "name": "Carpentry and Furniture Making",
+    "nsqf_level": 4,
+    "skills": ["woodworking", "measurements", "tools", "furniture design"],
+    "employment_type": "both",
+    "category": "construction"
+  },
+  {
+    "id": "T009",
+    "name": "Mason - Building Construction",
+    "nsqf_level": 3,
+    "skills": ["bricklaying", "cement work", "measurements", "tools"],
+    "employment_type": "wage",
+    "category": "construction"
+  },
+  {
+    "id": "T010",
+    "name": "Welding - Arc and Gas",
+    "nsqf_level": 4,
+    "skills": ["welding", "metal cutting", "safety", "tools"],
+    "employment_type": "wage",
+    "category": "manufacturing"
+  },
+  {
+    "id": "T011",
+    "name": "Two Wheeler Mechanic",
+    "nsqf_level": 4,
+    "skills": ["engine repair", "tools", "diagnostics", "vehicle maintenance"],
+    "employment_type": "self",
+    "category": "automotive"
+  },
+  {
+    "id": "T012",
+    "name": "Four Wheeler Mechanic",
+    "nsqf_level": 5,
+    "skills": ["engine repair", "diagnostics", "vehicle maintenance", "tools"],
+    "employment_type": "wage",
+    "category": "automotive"
+  },
+  {
+    "id": "T013",
+    "name": "Mobile Phone Repair Technician",
+    "nsqf_level": 4,
+    "skills": ["circuit repair", "soldering", "diagnostics", "tools"],
+    "employment_type": "self",
+    "category": "electronics"
+  },
+  {
+    "id": "T014",
+    "name": "Domestic Appliance Repair",
+    "nsqf_level": 4,
+    "skills": ["repairing things", "circuits", "tools", "diagnostics"],
+    "employment_type": "self",
+    "category": "electronics"
+  },
+  {
+    "id": "T015",
+    "name": "Food Processing and Preservation",
+    "nsqf_level": 3,
+    "skills": ["food handling", "packaging", "hygiene practices", "preservation techniques"],
+    "employment_type": "self",
+    "category": "food processing"
   }
 ]
