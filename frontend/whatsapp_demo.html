@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Livelihood Assistant — WhatsApp Demo</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: #e5ddd5;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    padding: 30px 10px;
+  }
+  .phone {
+    width: 400px;
+    max-width: 100%;
+    background: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+    display: flex;
+    flex-direction: column;
+    height: 720px;
+  }
+  .header {
+    background: #075E54;
+    color: white;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .header .avatar {
+    width: 38px; height: 38px; border-radius: 50%;
+    background: #25D366;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: bold; font-size: 15px;
+  }
+  .header .info b { display: block; font-size: 15px; }
+  .header .info span { font-size: 12px; opacity: 0.85; }
+
+  .chat {
+    flex: 1;
+    background: #e5ddd5;
+    padding: 16px 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .bubble {
+    max-width: 82%;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 1.4;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    white-space: pre-wrap;
+  }
+  .bubble.user {
+    background: #DCF8C6;
+    align-self: flex-end;
+    border-top-right-radius: 0;
+  }
+  .bubble.bot {
+    background: #ffffff;
+    align-self: flex-start;
+    border-top-left-radius: 0;
+  }
+  .bubble .tag {
+    font-size: 10.5px;
+    font-weight: bold;
+    color: #075E54;
+    display: block;
+    margin-bottom: 3px;
+  }
+  .bubble audio {
+    width: 100%;
+    margin-top: 6px;
+    height: 32px;
+  }
+  .trade-card {
+    background: #f7f7f7;
+    border-left: 3px solid #25D366;
+    border-radius: 6px;
+    padding: 8px 10px;
+    margin-top: 6px;
+    font-size: 12.5px;
+  }
+  .trade-card b { font-size: 13px; }
+  .trade-card .score { color: #075E54; font-weight: bold; }
+
+  .composer {
+    background: #f0f0f0;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-top: 1px solid #ddd;
+  }
+  .composer input[type=file] {
+    display: none;
+  }
+  .composer label.upload {
+    background: #075E54;
+    color: white;
+    padding: 9px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .composer .filename {
+    font-size: 12px;
+    color: #555;
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .composer button.send {
+    background: #25D366;
+    border: none;
+    color: white;
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    font-size: 16px;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  .composer button.send:disabled {
+    background: #a8d8bd;
+    cursor: not-allowed;
+  }
+  .loading {
+    align-self: flex-start;
+    font-size: 12.5px;
+    color: #777;
+    font-style: italic;
+    padding: 4px 8px;
+  }
+  .api-url {
+    font-size: 11px;
+    text-align: center;
+    color: #888;
+    padding: 6px;
+    background: #fafafa;
+    border-top: 1px solid #eee;
+  }
+  .api-url input {
+    font-size: 11px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 2px 6px;
+    width: 220px;
+  }
+</style>
+</head>
+<body>
+
+<div class="phone">
+  <div class="header">
+    <div class="avatar">V</div>
+    <div class="info">
+      <b>VANI — Livelihood Assistant</b>
+      <span>Voice-based skilling helper</span>
+    </div>
+  </div>
+
+  <div class="chat" id="chat">
+    <div class="bubble bot">
+      <span class="tag">VANI</span>
+      Namaste! Send a voice note describing your education, skills, and what kind of work you're looking for, and I'll suggest suitable training options for you.
+    </div>
+  </div>
+
+  <div class="api-url">
+    Backend: <input id="apiUrl" value="http://127.0.0.1:8000" />
+  </div>
+
+  <div class="composer">
+    <label class="upload" for="audioFile">🎤 Voice note</label>
+    <input type="file" id="audioFile" accept="audio/*" />
+    <span class="filename" id="filenameLabel">No file selected</span>
+    <button class="send" id="sendBtn" disabled>➤</button>
+  </div>
+</div>
+
+<script>
+const fileInput = document.getElementById("audioFile");
+const filenameLabel = document.getElementById("filenameLabel");
+const sendBtn = document.getElementById("sendBtn");
+const chat = document.getElementById("chat");
+const apiUrlInput = document.getElementById("apiUrl");
+
+let selectedFile = null;
+
+fileInput.addEventListener("change", () => {
+  if (fileInput.files.length > 0) {
+    selectedFile = fileInput.files[0];
+    filenameLabel.textContent = selectedFile.name;
+    sendBtn.disabled = false;
+  }
+});
+
+function addBubble(html, cls) {
+  const div = document.createElement("div");
+  div.className = "bubble " + cls;
+  div.innerHTML = html;
+  chat.appendChild(div);
+  chat.scrollTop = chat.scrollHeight;
+  return div;
+}
+
+function addLoading(text) {
+  const div = document.createElement("div");
+  div.className = "loading";
+  div.textContent = text;
+  chat.appendChild(div);
+  chat.scrollTop = chat.scrollHeight;
+  return div;
+}
+
+sendBtn.addEventListener("click", async () => {
+  if (!selectedFile) return;
+  const apiBase = apiUrlInput.value.replace(/\/$/, "");
+
+  addBubble(`🎤 <i>${selectedFile.name}</i> <span style="color:#888;font-size:11px">(voice note sent)</span>`, "user");
+  const loadingEl = addLoading("VANI is listening and thinking...");
+  sendBtn.disabled = true;
+
+  const formData = new FormData();
+  formData.append("audio", selectedFile);
+
+  try {
+    const res = await fetch(`${apiBase}/voice-converse`, {
+      method: "POST",
+      body: formData
+    });
+
+    if (!res.ok) throw new Error(`Server returned ${res.status}`);
+    const data = await res.json();
+
+    loadingEl.remove();
+
+    // Show transcription as a small user-side confirmation bubble
+    addBubble(`<span class="tag">Transcribed</span>${data.transcribed_text}`, "user");
+
+    // Build trade cards
+    let tradesHtml = "";
+    (data.recommendations || []).forEach(r => {
+      tradesHtml += `
+        <div class="trade-card">
+          <b>${r.trade}</b> — NSQF Level ${r.nsqf_level}<br>
+          <span class="score">Match score: ${r.score}</span><br>
+          Matched: ${r.matched_skills.join(", ")}
+        </div>`;
+    });
+
+    // Bot response bubble: text + audio + trade cards
+    const audioSrc = `${apiBase}/audio/${data.response_audio_path.split("/").pop()}`;
+    addBubble(`
+      <span class="tag">VANI</span>
+      ${data.response_text_english}
+      <audio controls src="${audioSrc}"></audio>
+      ${tradesHtml}
+    `, "bot");
+
+  } catch (err) {
+    loadingEl.remove();
+    addBubble(`⚠️ Error: ${err.message}. Check the backend URL and make sure the server is running.`, "bot");
+  } finally {
+    selectedFile = null;
+    fileInput.value = "";
+    filenameLabel.textContent = "No file selected";
+  }
+});
+</script>
+
+</body>
+</html>
