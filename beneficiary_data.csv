@@ -1,0 +1,201 @@
+education_level,family_occupation,mobility_constraint,interest_area,NSQF_trade_label
+No formal education,Farming,High,Carpentry,Electrician
+5th pass,Weaving,High,Tailoring,Tailoring
+12th pass,Farming,High,Food Processing,Food Processing
+No formal education,Farming,Low,Electrical work,Electrician
+12th pass,None,Low,Electrical work,Food Processing
+5th pass,Carpentry,High,Carpentry,Tailoring
+5th pass,Carpentry,Medium,Carpentry,Electrician
+5th pass,Tailoring,Low,Tailoring,Tailoring
+10th pass,Farming,Medium,Carpentry,Carpenter
+No formal education,Carpentry,High,Tailoring,Tailoring
+10th pass,Farming,High,Carpentry,Carpenter
+12th pass,Weaving,High,Tailoring,Tailoring
+No formal education,Weaving,Medium,Tailoring,Tailoring
+5th pass,Farming,Medium,Carpentry,Food Processing
+8th pass,Weaving,Medium,Carpentry,Electrician
+8th pass,Farming,High,Electrical work,Electrician
+5th pass,Carpentry,Medium,Carpentry,Electrician
+8th pass,Farming,Low,Tailoring,Tailoring
+8th pass,Carpentry,Medium,Tailoring,Tailoring
+5th pass,None,High,Carpentry,Electrician
+10th pass,Carpentry,High,Food Processing,Food Processing
+5th pass,Tailoring,Low,Electrical work,Tailoring
+12th pass,None,Medium,Food Processing,Food Processing
+12th pass,Carpentry,Medium,Electrical work,Electrician
+12th pass,Carpentry,Low,Tailoring,Tailoring
+No formal education,Weaving,High,Electrical work,Food Processing
+12th pass,Farming,Medium,Food Processing,Food Processing
+12th pass,Carpentry,High,Carpentry,Tailoring
+No formal education,None,Medium,Carpentry,Tailoring
+8th pass,Carpentry,Low,Food Processing,Food Processing
+No formal education,Tailoring,High,Electrical work,Tailoring
+12th pass,Farming,High,Carpentry,Electrician
+5th pass,Tailoring,Low,Tailoring,Tailoring
+12th pass,Tailoring,Medium,Tailoring,Tailoring
+No formal education,Tailoring,Medium,Electrical work,Tailoring
+No formal education,Weaving,High,Tailoring,Tailoring
+No formal education,Carpentry,Low,Electrical work,Electrician
+10th pass,None,Low,Carpentry,Food Processing
+5th pass,None,High,Electrical work,Carpenter
+10th pass,Tailoring,Medium,Food Processing,Food Processing
+No formal education,Weaving,Low,Tailoring,Tailoring
+8th pass,Farming,High,Electrical work,Electrician
+No formal education,Farming,High,Tailoring,Tailoring
+5th pass,Farming,Low,Carpentry,Tailoring
+12th pass,Weaving,Medium,Food Processing,Food Processing
+5th pass,None,Low,Food Processing,Food Processing
+5th pass,Carpentry,Medium,Electrical work,Tailoring
+No formal education,Carpentry,Medium,Food Processing,Food Processing
+10th pass,Carpentry,High,Tailoring,Tailoring
+No formal education,Farming,Medium,Carpentry,Tailoring
+5th pass,Weaving,Low,Food Processing,Food Processing
+5th pass,Carpentry,Low,Carpentry,Food Processing
+5th pass,Farming,Medium,Tailoring,Tailoring
+No formal education,None,Low,Tailoring,Tailoring
+5th pass,Weaving,Medium,Food Processing,Food Processing
+10th pass,Weaving,Medium,Tailoring,Tailoring
+5th pass,Carpentry,Low,Food Processing,Food Processing
+8th pass,Carpentry,Medium,Food Processing,Food Processing
+12th pass,Carpentry,Low,Electrical work,Carpenter
+5th pass,Farming,High,Tailoring,Tailoring
+8th pass,Farming,Low,Food Processing,Food Processing
+12th pass,None,Low,Tailoring,Tailoring
+12th pass,Farming,Low,Tailoring,Tailoring
+12th pass,Farming,High,Electrical work,Food Processing
+No formal education,None,Low,Tailoring,Tailoring
+12th pass,Farming,Medium,Carpentry,Carpenter
+5th pass,Tailoring,Low,Carpentry,Tailoring
+10th pass,Weaving,High,Carpentry,Food Processing
+8th pass,Farming,Low,Food Processing,Food Processing
+12th pass,None,Low,Tailoring,Tailoring
+12th pass,Weaving,High,Carpentry,Electrician
+8th pass,Farming,Low,Carpentry,Carpenter
+5th pass,Carpentry,High,Carpentry,Tailoring
+12th pass,Tailoring,High,Tailoring,Tailoring
+5th pass,Tailoring,Low,Tailoring,Tailoring
+12th pass,Weaving,Medium,Carpentry,Electrician
+8th pass,Weaving,High,Carpentry,Food Processing
+8th pass,Farming,Low,Food Processing,Food Processing
+8th pass,Farming,Low,Carpentry,Electrician
+8th pass,Weaving,High,Food Processing,Food Processing
+12th pass,Carpentry,High,Tailoring,Tailoring
+No formal education,Farming,High,Electrical work,Tailoring
+8th pass,None,High,Electrical work,Food Processing
+5th pass,Farming,Medium,Carpentry,Tailoring
+8th pass,Weaving,High,Electrical work,Tailoring
+8th pass,None,Medium,Electrical work,Electrician
+5th pass,Weaving,Medium,Tailoring,Tailoring
+5th pass,Tailoring,Medium,Electrical work,Tailoring
+8th pass,Weaving,High,Tailoring,Tailoring
+10th pass,Farming,Medium,Electrical work,Electrician
+10th pass,Tailoring,Medium,Electrical work,Tailoring
+5th pass,Farming,High,Electrical work,Food Processing
+8th pass,Tailoring,Low,Carpentry,Tailoring
+8th pass,None,Medium,Carpentry,Tailoring
+No formal education,Tailoring,Low,Carpentry,Tailoring
+No formal education,Farming,High,Food Processing,Food Processing
+8th pass,Tailoring,Medium,Tailoring,Tailoring
+10th pass,None,Low,Carpentry,Tailoring
+10th pass,Farming,High,Electrical work,Carpenter
+10th pass,Farming,High,Carpentry,Carpenter
+No formal education,Tailoring,High,Carpentry,Tailoring
+10th pass,Tailoring,Medium,Carpentry,Tailoring
+12th pass,Weaving,Low,Food Processing,Food Processing
+10th pass,Weaving,High,Carpentry,Food Processing
+12th pass,Farming,Medium,Carpentry,Electrician
+10th pass,None,High,Carpentry,Food Processing
+10th pass,Carpentry,High,Electrical work,Food Processing
+5th pass,Farming,Medium,Carpentry,Tailoring
+5th pass,Tailoring,Low,Electrical work,Tailoring
+5th pass,Farming,Low,Electrical work,Food Processing
+12th pass,Farming,Medium,Food Processing,Food Processing
+12th pass,Weaving,High,Food Processing,Food Processing
+10th pass,Carpentry,Low,Electrical work,Tailoring
+No formal education,Carpentry,Low,Electrical work,Food Processing
+No formal education,None,Low,Tailoring,Tailoring
+10th pass,Weaving,Medium,Carpentry,Food Processing
+12th pass,None,Medium,Food Processing,Food Processing
+5th pass,Carpentry,Medium,Carpentry,Electrician
+8th pass,None,Medium,Electrical work,Carpenter
+10th pass,Farming,High,Carpentry,Electrician
+8th pass,Tailoring,Medium,Tailoring,Tailoring
+5th pass,Weaving,Low,Food Processing,Food Processing
+5th pass,Weaving,Low,Food Processing,Food Processing
+10th pass,Tailoring,High,Food Processing,Food Processing
+10th pass,Farming,Low,Food Processing,Food Processing
+10th pass,None,High,Tailoring,Tailoring
+12th pass,Carpentry,Medium,Tailoring,Tailoring
+8th pass,Tailoring,Medium,Food Processing,Food Processing
+12th pass,None,High,Electrical work,Food Processing
+5th pass,Tailoring,Medium,Food Processing,Food Processing
+No formal education,Carpentry,Medium,Food Processing,Food Processing
+5th pass,Carpentry,Low,Tailoring,Tailoring
+10th pass,None,High,Tailoring,Tailoring
+No formal education,Carpentry,Low,Food Processing,Food Processing
+5th pass,Farming,Medium,Food Processing,Food Processing
+8th pass,Weaving,Medium,Carpentry,Carpenter
+10th pass,Tailoring,Medium,Carpentry,Tailoring
+No formal education,Carpentry,Low,Tailoring,Tailoring
+8th pass,Weaving,High,Tailoring,Tailoring
+No formal education,Farming,Low,Electrical work,Tailoring
+12th pass,Weaving,Low,Electrical work,Food Processing
+No formal education,None,Low,Food Processing,Food Processing
+8th pass,Tailoring,Low,Tailoring,Tailoring
+5th pass,Tailoring,Low,Tailoring,Tailoring
+8th pass,None,High,Food Processing,Food Processing
+10th pass,Weaving,Low,Electrical work,Tailoring
+8th pass,None,Low,Tailoring,Tailoring
+8th pass,None,Medium,Carpentry,Tailoring
+12th pass,Tailoring,Low,Food Processing,Food Processing
+10th pass,Farming,Medium,Carpentry,Food Processing
+5th pass,Carpentry,Low,Carpentry,Food Processing
+10th pass,Carpentry,High,Carpentry,Carpenter
+5th pass,Farming,Medium,Food Processing,Food Processing
+5th pass,Carpentry,High,Food Processing,Food Processing
+8th pass,Farming,Medium,Carpentry,Electrician
+10th pass,Weaving,Medium,Carpentry,Carpenter
+8th pass,None,High,Carpentry,Tailoring
+12th pass,Weaving,Low,Electrical work,Food Processing
+10th pass,None,Low,Food Processing,Food Processing
+10th pass,Carpentry,Low,Tailoring,Tailoring
+8th pass,Weaving,Medium,Electrical work,Carpenter
+12th pass,Tailoring,Medium,Carpentry,Tailoring
+10th pass,None,Medium,Carpentry,Food Processing
+8th pass,Tailoring,Medium,Electrical work,Tailoring
+No formal education,Weaving,Medium,Tailoring,Tailoring
+12th pass,Weaving,Low,Electrical work,Food Processing
+8th pass,None,High,Carpentry,Tailoring
+5th pass,Tailoring,Low,Carpentry,Tailoring
+5th pass,Tailoring,Low,Electrical work,Tailoring
+8th pass,Farming,Low,Carpentry,Electrician
+10th pass,Farming,Low,Carpentry,Food Processing
+10th pass,Carpentry,Medium,Electrical work,Tailoring
+8th pass,Carpentry,Low,Tailoring,Tailoring
+10th pass,Carpentry,Low,Tailoring,Tailoring
+5th pass,Weaving,High,Carpentry,Tailoring
+5th pass,Farming,High,Food Processing,Food Processing
+12th pass,None,High,Electrical work,Food Processing
+10th pass,Carpentry,Medium,Food Processing,Food Processing
+8th pass,None,High,Tailoring,Tailoring
+12th pass,Farming,Low,Electrical work,Carpenter
+No formal education,Weaving,Low,Electrical work,Tailoring
+5th pass,Farming,Medium,Food Processing,Food Processing
+12th pass,Carpentry,Medium,Tailoring,Tailoring
+5th pass,Tailoring,High,Carpentry,Tailoring
+10th pass,Farming,High,Electrical work,Carpenter
+12th pass,Weaving,Medium,Tailoring,Tailoring
+12th pass,Weaving,High,Electrical work,Carpenter
+5th pass,Farming,Low,Electrical work,Carpenter
+12th pass,None,Medium,Food Processing,Food Processing
+No formal education,Carpentry,High,Carpentry,Food Processing
+8th pass,None,High,Food Processing,Food Processing
+10th pass,Farming,High,Tailoring,Tailoring
+10th pass,Tailoring,High,Carpentry,Tailoring
+No formal education,Farming,Low,Tailoring,Tailoring
+8th pass,None,Low,Electrical work,Food Processing
+12th pass,Carpentry,Medium,Electrical work,Food Processing
+10th pass,Farming,Medium,Carpentry,Food Processing
+8th pass,Tailoring,High,Tailoring,Tailoring
+5th pass,Tailoring,Medium,Food Processing,Food Processing
+8th pass,Carpentry,High,Tailoring,Tailoring
